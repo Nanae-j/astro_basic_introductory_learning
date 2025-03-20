@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "Aboutページ";
+
+const identity = {
+  name: "奈々恵",
+  country: "日本",
+  occupation: "歯科衛生士",
+  hobbies: ["コーディング", "ジム", "読書"],
+};
+
+const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Next.js"];
+
+const skillColor = "green";
+const fontBold = "bold";
+const upperCase = "uppercase";
+---
+
+<style define:vars={{ skillColor, fontBold, upperCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontBold);
+    text-transform: var(--upperCase);
+  }
+</style>
+
+<Layout>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
+  <h1>{pageTitle}</h1>
+  <h2>今回はAstroフレームワークを使って高速で動くブログを作っていきたい</h2>
+  <div>
+    <p>私について</p>
+    <p>
+      私の名前は{identity.name}です。{identity.country}に住んでいます。{
+        identity.occupation
+      }として札幌の歯科医院に勤務しています。
+    </p>
+    {
+      identity.hobbies.length >= 2 && (
+        <p>
+          私の趣味は二つあって、{identity.hobbies[0]}と{identity.hobbies[1]}です
+        </p>
+      )
+    }
+    <p>私のスキルは以下です</p>
+    <ul>
+      {skills.map((item) => <li class="skill">{item}</li>)}
+    </ul>
+  </div>
+</Layout>
