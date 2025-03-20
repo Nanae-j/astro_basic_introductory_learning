@@ -1,4 +1,14 @@
-# 旅行の思い出: 日本の美しい場所
+---
+layout: ../../layouts/MarkDownPostLayout.astro
+title: "旅行の思い出: 日本の美しい場所"
+pubDate: 2023-12-27
+description: "私が最近訪れた日本の素晴らしい場所についてご紹介したいと思います。"
+author: "Nanae"
+image:
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "Astroのロゴ"
+tags: ["astro", "blog", "Programming"]
+---
 
 こんにちは、皆さん！今日は、私が最近訪れた日本の素晴らしい場所についてご紹介したいと思います。
 

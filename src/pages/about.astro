@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "Aboutページ";
+const pageTitle = "ABOUT";
 
 const identity = {
   name: "奈々恵",
@@ -18,11 +18,6 @@ const upperCase = "uppercase";
 ---
 
 <style define:vars={{ skillColor, fontBold, upperCase }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-
   .skill {
     color: var(--skillColor);
     font-weight: var(--fontBold);
@@ -30,10 +25,7 @@ const upperCase = "uppercase";
   }
 </style>
 
-<Layout>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/blog">Blog</a>
+<BaseLayout pageTitle={pageTitle}>
   <h1>{pageTitle}</h1>
   <h2>今回はAstroフレームワークを使って高速で動くブログを作っていきたい</h2>
   <div>
@@ -55,4 +47,4 @@ const upperCase = "uppercase";
       {skills.map((item) => <li class="skill">{item}</li>)}
     </ul>
   </div>
-</Layout>
+</BaseLayout>

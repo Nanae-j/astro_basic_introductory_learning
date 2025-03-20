@@ -1,0 +1,29 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../assets/styles/global.css";
+
+const { pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astroブログ - {pageTitle}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Astro build</h1>
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import "../assets/js/menu.js";
+    </script>
+  </body>
+</html>

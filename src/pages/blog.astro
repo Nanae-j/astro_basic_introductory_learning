@@ -1,12 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "BLOG";
 ---
 
-<Layout>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/blog">Blog</a>
-	<h1>Blog</h1>
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Blog</h1>
   <h2>ここはブログページ</h2>
   <p>いろんな</p>
   <ul>
@@ -14,4 +13,4 @@ import Layout from '../layouts/Layout.astro';
     <li><a href="/posts/post-2">記事2</a></li>
     <li><a href="/posts/post-3">記事3</a></li>
   </ul>
-</Layout>
+</BaseLayout>

@@ -1,4 +1,14 @@
-# 健康的な生活のための簡単なヒント
+---
+layout: ../../layouts/MarkDownPostLayout.astro
+title: "健康的な生活のための簡単なヒント"
+pubDate: 2023-12-27
+description: "今回は健康的な生活を送るための簡単なヒントをいくつかご紹介します。"
+author: "Nanae"
+image:
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "Astroのロゴ"
+tags: ["astro", "blog", "Programming"]
+---
 
 こんにちは！今回は健康的な生活を送るための簡単なヒントをいくつかご紹介します。
 

@@ -1,6 +1,14 @@
-# 私の最初のブログ記事
-
-投稿日: 2023-12-25
+---
+layout: ../../layouts/MarkDownPostLayout.astro
+title: "私の最初のブログ"
+pubDate: 2023-12-27
+description: "これは私の新しいAstroブログの最初の記事です"
+author: "Nanae"
+image:
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "Astroのロゴ"
+tags: ["astro", "blog", "Programming"]
+---
 
 Astro の学習について。今回が初めての投稿になります。**Astro 入門**
 
