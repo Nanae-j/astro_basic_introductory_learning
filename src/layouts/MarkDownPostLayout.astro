@@ -4,7 +4,6 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <h1>{frontmatter.title}</h1>
   <p>{frontmatter.pubDate.slice(0, 10)}</p>
   <p>
     <em>
@@ -15,16 +14,50 @@ const { frontmatter } = Astro.props;
   <div class="thumbnail">
     <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
   </div>
+  <ul class="tags-list">
+    {
+      frontmatter.tags.map((tag: string) => (
+        <a href={`/tags/${tag}`}>
+          <li>{tag}</li>
+        </a>
+      ))
+    }
+  </ul>
   <slot />
 </BaseLayout>
 
 <style>
   .thumbnail {
     margin: 3rem auto;
+  }
 
-    img {
-      display: block;
-      width: 100%;
-    }
+  .thumbnail img {
+    display: block;
+    width: 100%;
+  }
+
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .tags-list a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .tags-list a:hover {
+    opacity: 0.6;
+  }
+
+  .tags-list a li {
+    padding: 1rem;
+    background-color: purple;
+    color: white;
+    letter-spacing: 0.1em;
   }
 </style>

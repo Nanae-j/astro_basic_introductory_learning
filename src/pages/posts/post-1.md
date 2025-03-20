@@ -7,7 +7,7 @@ author: "Nanae"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "Astroのロゴ"
-tags: ["astro", "blog", "Programming"]
+tags: ["astro", "blog", "programming"]
 ---
 
 Astro の学習について。今回が初めての投稿になります。**Astro 入門**

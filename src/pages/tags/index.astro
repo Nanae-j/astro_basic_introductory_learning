@@ -1,0 +1,59 @@
+---
+import type { MarkdownInstance } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const pageTitle = "タグ一覧ページ";
+
+interface Frontmatter {
+  layout: string;
+  title: string;
+  pubDate: string;
+  description: string;
+  author: string;
+  image: {
+    url: string;
+    alt: string;
+  };
+  tags: string[];
+}
+
+const matches = import.meta.glob<MarkdownInstance<Frontmatter>>(
+  "../posts/*.md",
+  { eager: true },
+);
+const allPosts = Object.values(matches);
+const uniqueTags = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul class="tags">
+    {
+      uniqueTags.map((tag) => (
+        <li>
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  .tags {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .tags li {
+    margin-bottom: 0.5rem;
+  }
+
+  .tags li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem;
+    letter-spacing: 0.1em;
+    background-color: purple;
+    color: white;
+  }
+</style>

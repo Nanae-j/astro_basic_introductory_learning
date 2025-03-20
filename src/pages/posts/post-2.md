@@ -7,7 +7,7 @@ author: "Nanae"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "Astroのロゴ"
-tags: ["astro", "blog", "Programming"]
+tags: ["astro", "blog", "programming"]
 ---
 
 こんにちは、皆さん！今日は、私が最近訪れた日本の素晴らしい場所についてご紹介したいと思います。

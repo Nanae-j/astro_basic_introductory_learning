@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/MarkDownPostLayout.astro
-title: "健康的な生活のための簡単なヒント"
+title: "4回目の投稿"
 pubDate: 2023-12-27
-description: "今回は健康的な生活を送るための簡単なヒントをいくつかご紹介します。"
+description: "これは4回目の投稿です"
 author: "Nanae"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "Astroのロゴ"
-tags: ["astro", "blog", "programming"]
+tags: ["blog", "programming", "python"]
 ---
 
 こんにちは！今回は健康的な生活を送るための簡単なヒントをいくつかご紹介します。

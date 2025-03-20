@@ -17,14 +17,6 @@ const fontBold = "bold";
 const upperCase = "uppercase";
 ---
 
-<style define:vars={{ skillColor, fontBold, upperCase }}>
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontBold);
-    text-transform: var(--upperCase);
-  }
-</style>
-
 <BaseLayout pageTitle={pageTitle}>
   <h1>{pageTitle}</h1>
   <h2>今回はAstroフレームワークを使って高速で動くブログを作っていきたい</h2>
@@ -48,3 +40,11 @@ const upperCase = "uppercase";
     </ul>
   </div>
 </BaseLayout>
+
+<style define:vars={{ skillColor, fontBold, upperCase }}>
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontBold);
+    text-transform: var(--upperCase);
+  }
+</style>
