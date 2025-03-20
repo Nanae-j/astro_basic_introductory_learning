@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { MarkdownInstance } from "astro";
@@ -18,20 +19,19 @@ interface Frontmatter {
   tags: string[];
 }
 
-const matches = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "./posts/*.md",
-  { eager: true },
-);
-const allPosts = Object.values(matches);
-
-// console.log(allPosts.map((post) => post.frontmatter));
+const allPosts = await getCollection("posts");
+const sortedPosts = allPosts.sort((a, b) => {
+  const aDate = new Date(a.data.pubDate);
+  const bDate = new Date(b.data.pubDate);
+  return bDate.getTime() - aDate.getTime();
+});
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <ul>
     {
-      allPosts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+      sortedPosts.map((post) => (
+        <BlogPost url={`/posts/${post.id}`} title={post.data.title} />
       ))
     }
   </ul>

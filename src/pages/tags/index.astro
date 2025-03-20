@@ -1,6 +1,7 @@
 ---
 import type { MarkdownInstance } from "astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 const pageTitle = "タグ一覧ページ";
 
 interface Frontmatter {
@@ -16,14 +17,8 @@ interface Frontmatter {
   tags: string[];
 }
 
-const matches = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../posts/*.md",
-  { eager: true },
-);
-const allPosts = Object.values(matches);
-const uniqueTags = [
-  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
-];
+const allPosts = await getCollection("posts");
+const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
