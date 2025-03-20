@@ -1,4 +1,5 @@
 ---
+import Greeting from "../components/Greeting";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "TOP";
@@ -6,4 +7,29 @@ const pageTitle = "TOP";
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>ブログのサブタイトル</h2>
+  <Greeting
+    client:load
+    messages={[
+      "こんにちは",
+      "Hello",
+      "Hola",
+      "Bonjour",
+      "Hallo",
+      "Ciao",
+      "Olá",
+      "안녕하세요",
+      "你好",
+      "Salut",
+      "Привет",
+      "Namaste",
+      "Sawasdee",
+      "Merhaba",
+      "שלום",
+      "สวัสดี",
+      "Sveiki",
+      "Kamusta",
+      "Xin chào",
+      "Selam",
+    ]}
+  />
 </BaseLayout>
