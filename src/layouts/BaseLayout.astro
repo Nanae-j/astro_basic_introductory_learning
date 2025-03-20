@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import { ClientRouter, fade } from "astro:transitions";
 import "../assets/styles/global.css";
 
 const { pageTitle } = Astro.props;
@@ -14,11 +15,12 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astroブログ - {pageTitle}</title>
+    <ClientRouter />
   </head>
   <body>
     <Header />
-    <main>
-      <h1>{pageTitle}</h1>
+    <main transition:animate={fade({ duration: "0.4s" })}>
+      <h1 transition:animate="slide">{pageTitle}</h1>
       <slot />
     </main>
     <Footer />
