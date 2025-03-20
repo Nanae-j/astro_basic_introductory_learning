@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkDownPostLayout.astro
 title: "4回目の投稿"
 pubDate: 2023-12-27
 description: "これは4回目の投稿です"
