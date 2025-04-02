@@ -3,9 +3,10 @@ import Greeting from "../components/Greeting";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "TOP";
+const pageDescription = "TOPページです";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <h2>ブログのサブタイトル</h2>
   <Greeting
     client:load

@@ -3,8 +3,11 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter, fade } from "astro:transitions";
 import "../assets/styles/global.css";
+import { SEO } from "astro-seo";
 
-const { pageTitle } = Astro.props;
+const image = "https://astro-blog-udemy-28y.pages.dev/ogp-image.jpg";
+
+const { pageTitle, pageDescription } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,7 +17,27 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astroブログ - {pageTitle}</title>
+    <SEO
+      title=`Astroブログ - ${pageTitle}`
+      description={pageDescription}
+      openGraph={{
+        basic: {
+          type: "website",
+          url: "https://astro-blog-udemy-28y.pages.dev/",
+          title: `Astroブログ - ${pageTitle}`,
+          image: image,
+        },
+        optional: {
+          description: pageDescription,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: `Astroブログ - ${pageTitle}`,
+        description: pageDescription,
+        image: image,
+      }}
+    />
     <ClientRouter />
   </head>
   <body>

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "ABOUT";
+const pageDescription = "ABOUTページです";
 
 const identity = {
   name: "奈々恵",
@@ -17,7 +18,7 @@ const fontBold = "bold";
 const upperCase = "uppercase";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <h2>今回はAstroフレームワークを使って高速で動くブログを作っていきたい</h2>
   <div>
     <p>私について</p>

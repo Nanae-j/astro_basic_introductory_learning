@@ -5,6 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { MarkdownInstance } from "astro";
 
 const pageTitle = "BLOG";
+const pageDescription = "BLOGページです";
 
 interface Frontmatter {
   layout: string;
@@ -27,7 +28,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 });
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <ul>
     {
       sortedPosts.map((post) => (
