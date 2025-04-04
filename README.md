@@ -27,6 +27,7 @@
 2. [環境](#環境)
 3. [ディレクトリ構成](#ディレクトリ構成)
 4. [開発環境構築](#開発環境構築)
+5. [開発メモ](#開発メモ)
 
 
 ## プロジェクトについて
@@ -178,3 +179,10 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+## 開発メモ
+
+<p><a href="https://www.notion.so/Astro-1bcdf53fe25a800889aff83d999ce255?pvs=4">Notion まとめ</a></p>
+
